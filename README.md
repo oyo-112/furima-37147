@@ -35,11 +35,6 @@
 ### Association
 - belongs_to :user
 - has_one :purchase_record
-- belongs_to_active_hash :condition
-- belongs_to_active_hash :shipping_cost
-- belongs_to_active_hash :shipping_days
-- belongs_to_active_hash :prefecture
-- belongs_to_active_hash :category
 
 
 ## purchase_record テーブル
