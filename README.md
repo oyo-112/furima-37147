@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :items
-- has_many :purchase_record
+- has_many :purchase_records
 
 
 ## items テーブル
@@ -37,7 +37,7 @@
 - has_one :purchase_record
 
 
-## purchase_record テーブル
+## purchase_records テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -50,7 +50,7 @@
 - has_one :delivery_address
 
 
-## delivery_address テーブル
+## delivery_addresses テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
