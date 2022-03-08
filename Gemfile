@@ -36,6 +36,7 @@ group :development, :test do
   gem 'faker'
   gem 'gimei'
   gem 'pry-rails'
+  gem 'active_hash'
 end
 
 group :development do
