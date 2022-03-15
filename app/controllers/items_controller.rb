@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # Item.create(item_params)
     @item = Item.new(item_params)
     @item.save
     if @item.save
