@@ -9,7 +9,6 @@ window.addEventListener('load', function(){
     addTaxDom.innerHTML = commission;
     const profitNumber = document.getElementById("profit")
     profitNumber.innerHTML = (Math.floor(inputValue - commission));
-      console.log(profitNumber);
     
   })
 
