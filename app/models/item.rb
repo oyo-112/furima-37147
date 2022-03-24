@@ -1,6 +1,11 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
+  belongs_to :shipping_cost
+
+
+
+  
   has_one_attached :image
   # has_one :purchase_record
 
