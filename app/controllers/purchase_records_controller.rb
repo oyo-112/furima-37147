@@ -1,5 +1,7 @@
 class PurchaseRecordsController < ApplicationController
   before_action :set_item, only: [:index, :create]
+  before_action :authenticate_user!
+  before_action :move_to_index
 
   def index
     @purchase_record_delivery_address = PurchaseRecordsDeliveryAddresses.new
@@ -32,6 +34,10 @@ class PurchaseRecordsController < ApplicationController
 
     def set_item
       @item = Item.find(params[:item_id])
+    end
+
+    def move_to_index
+      redirect_to root_path if current_user.id == @item.user.id
     end
 
 end
