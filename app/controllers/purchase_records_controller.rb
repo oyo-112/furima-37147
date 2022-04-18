@@ -2,6 +2,7 @@ class PurchaseRecordsController < ApplicationController
   before_action :set_item, only: [:index, :create]
   before_action :authenticate_user!
   before_action :move_to_index
+  before_action :sold_out
 
   def index
     @purchase_record_delivery_address = PurchaseRecordsDeliveryAddresses.new
@@ -41,5 +42,9 @@ class PurchaseRecordsController < ApplicationController
 
   def move_to_index
     redirect_to root_path if current_user.id == @item.user.id
+  end
+
+  def sold_out
+    redirect_to root_path if @item.purchase_record.present?
   end
 end
