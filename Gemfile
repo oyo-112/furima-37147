@@ -36,7 +36,6 @@ group :development, :test do
   gem 'faker'
   gem 'gimei'
   gem 'pry-rails'
-  gem 'active_hash'
 end
 
 group :development do
@@ -71,3 +70,5 @@ gem 'image_processing', '~> 1.2'
 gem 'pry-rails'
 gem 'payjp'
 gem "aws-sdk-s3", require: false
+
+gem 'active_hash'
