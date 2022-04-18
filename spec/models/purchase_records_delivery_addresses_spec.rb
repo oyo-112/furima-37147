@@ -54,12 +54,17 @@ RSpec.describe PurchaseRecordsDeliveryAddresses, type: :model do
       it '電話番号に半角数字以外が含まれている場合は購入できない' do
         @purchase_records_delivery_addresses.phone_number = '090-1234-5678'
         @purchase_records_delivery_addresses.valid?
-        expect(@purchase_records_delivery_addresses.errors.full_messages).to include('Phone number is not a number')
+        expect(@purchase_records_delivery_addresses.errors.full_messages).to include('Phone number is invalid')
       end
-      it '電話番号が11桁以下の半角数値でなければ購入できない' do
-        @purchase_records_delivery_addresses.phone_number = '０９０１２３４５６７８'
+      it '電話番号が9桁以下では購入できない' do
+        @purchase_records_delivery_addresses.phone_number = '12345678'
         @purchase_records_delivery_addresses.valid?
-        expect(@purchase_records_delivery_addresses.errors.full_messages).to include('Phone number is not a number')
+        expect(@purchase_records_delivery_addresses.errors.full_messages).to include('Phone number is invalid')
+      end
+      it '電話番号が12桁以上では購入できない' do
+        @purchase_records_delivery_addresses.phone_number = '090123456789'
+        @purchase_records_delivery_addresses.valid?
+        expect(@purchase_records_delivery_addresses.errors.full_messages).to include('Phone number is invalid')
       end
       it 'tokenが空では購入できない' do
         @purchase_records_delivery_addresses.token = nil

@@ -7,7 +7,7 @@ class PurchaseRecordsDeliveryAddresses
     validates :prefecture_id
     validates :city
     validates :address
-    validates :phone_number, numericality: { only_integer: true }
+    validates :phone_number, format: { with: /\A[0-9]{10,11}\z/ }
     validates :token
     validates :user_id
     validates :item_id
